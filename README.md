@@ -1,21 +1,18 @@
 # COMP4431 — Agentic Exam Prep
 
-*Preparing for an open-book Multimedia Computing final as **"Agentic Evan"** (me + my
-agents): the same targeted-revision drill loop and agent-authored notes — re-tuned from
-web programming to image / audio / video DSP — trading transcription time for practice,
-understanding, and using the concepts.*
+*A multimedia final doesn't ask you to recite what convolution is — it asks you to run a 3×3
+kernel over a pixel block by hand, on an image you've never seen. So I built a drill loop that
+hunts the errors that bite on *unfamiliar* transforms — dB misread as multiplicative, the
+off-by-one at a convolution's edge — and handed the note-transcription to my agents to buy
+the hours to actually practise. Here's how that went, rough patches included.*
 
 ## What This Is
 
-A worked record of prepping for the **COMP4431 (Multimedia Computing)** open-book final
-using the [`agentic-exam-prep`](https://github.com/evnchn-agentic/agentic-exam-prep)
-workflow — the sibling arc to
-[COMP4021](https://github.com/evnchn-agentic/comp4021-agentic-exam-prep).
-
-It is **not** an "an AI aced a course" story. It's a showcase of **learning ability** — what
-becomes possible when a human hands the *mechanical* parts (note transcription, question
-generation, drill bookkeeping) to agents and spends the reclaimed hours on practice,
-understanding, and use.
+The full arc of prepping for the **COMP4431 (Multimedia Computing)** open-book final with the
+[`agentic-exam-prep`](https://github.com/evnchn-agentic/agentic-exam-prep) loop — a record of
+**learning ability** on a subject made of signals and transforms: what a human reaches when
+the mechanical parts (note transcription, question generation, drill bookkeeping) go to
+agents, and the reclaimed hours go to practice and understanding.
 
 > **"Agentic Evan" = me + my agents.** Long story short.
 
@@ -23,9 +20,9 @@ understanding, and use.
 
 ### Phase 0 — Frame the surface
 Grouped the course into its multimedia/DSP modules (image, audio, video, compression) and
-ran a diagnostic pass on where my gaps *actually* were. Same aimed loop as COMP4021 — but
-the subject matter is signals and transforms, not HTTP and the DOM, so the *kind* of error
-to hunt is different (see Phase 3).
+ran a diagnostic pass on where my gaps *actually* were. The loop is aimed from the start —
+and because the subject is signals and transforms rather than HTTP and the DOM, the *kind* of
+error worth hunting is different (Phase 3).
 
 ### Phase 1 — Re-tune the drill engine for DSP
 The mechanics carried over from COMP4021; the **depth axes were re-designed for the domain**:
@@ -49,15 +46,16 @@ The loop graded every attempt by **reasoning quality, not just the letter**:
 
 ### Phase 3 — Predict where the next error hides (DSP failure shapes)
 The failure-shape track (Set 0.x) re-tuned for signals: **"operation ≠ in-place"** (a
-returns-new vs mutates trap), **"linear vs log-scale leak"** (treating dB as multiplicative),
-**"continuous vs discrete-time leak"** (applying continuous-Fourier intuition to DFT bins),
+returns-new vs mutates trap), **"linear vs log-scale leak"** (treating dB as multiplicative — −6 dB is *a quarter* of the
+power, not "half, twice"), **"continuous vs discrete-time leak"** (applying continuous-Fourier
+intuition to DFT bins),
 **off-by-one in border / padding** (convolution edges), and the **lossy/lossless
 decision-tree** (JPEG/PNG/GIF/WebP, H.264/ProRes, MP3/FLAC). Catch the *class* of error
 before it surfaces on un-drilled material.
 
 ### Phase 4 — Agent-authored notes: the time reallocation *(the thesis)*
-Same thesis as the sibling arc, and the real point of both. Courses often assign
-note-writing precisely *because* transcribing is the memorization device. Handing that
+This is the real point of the whole exercise. Courses often assign note-writing precisely
+*because* transcribing is the memorization device. Handing that
 transcription to an agent didn't skip the learning — it **reallocated the hours** from
 copying material into notes toward *practising*, *understanding*, and *using* the concepts.
 The agent freed the human to do the deeper work.
