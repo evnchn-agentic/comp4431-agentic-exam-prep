@@ -28,13 +28,18 @@ the subject matter is signals and transforms, not HTTP and the DOM, so the *kind
 to hunt is different (see Phase 3).
 
 ### Phase 1 — Re-tune the drill engine for DSP
-COMP4021 built its question banks from scratch; here the arc started from a **pre-existing
-question bank** as the source pool and **re-designed the depth axes for the domain**: the
-"code-output trace" axis became **algorithm-step trace** ("apply this 3×3 kernel to this
+The mechanics carried over from COMP4021; the **depth axes were re-designed for the domain**:
+the "code-output trace" axis became **algorithm-step trace** ("apply this 3×3 kernel to this
 pixel block — what's the centre output?"), kept the **footgun** and **confusion-pair** axes
 (lossy vs lossless, RGB vs YCbCr, DFT vs DCT, intra- vs inter-frame), and added
-**formula-recall** (Nyquist rate, quantization, kernel math). Each generated set still went
-through a verifier-agent pass before I drilled it.
+**formula-recall** (Nyquist rate, quantization, kernel math). Each generated set went through
+a verifier-agent pass before I drilled it — and I caught my *own* arithmetic slip in a
+hand-authored footgun question, flagging it in the answer key rather than burying it.
+
+**Not smooth:** when I asked for a set with answers, an agent tried to *infer* the answers
+from raw unverified material instead of transporting the already-curated, self-checked sets.
+I shut that down — with verified artifacts in hand, the agent's job is to *carry* what's
+checked, not *re-derive* it (re-derivation is expensive and invites fabrication).
 
 ### Phase 2 — Targeted revision, not re-reading
 The loop graded every attempt by **reasoning quality, not just the letter**:
@@ -60,7 +65,19 @@ The agent freed the human to do the deeper work.
 ### Phase 5 — The final sprint
 Tier-triaged what was actually worth drilling in the last stretch (you drill the right
 10–15, not the whole bank), froze the print pack, and ran a drill-then-mark loop into the
-exam.
+exam. **One honest snag:** the agent's first grep of my marked answers undercounted — I'd
+added marks *between* its passes, and only "look carefully" surfaced them. Lesson baked in:
+re-read fresh, never trust a stale grep of a moving target.
+
+## Why it worked — generalization, not recall
+
+The whole payoff of this loop is **generalization**. The failure-shape track (Phase 3)
+doesn't memorize answers — it learns *where a class of error strikes next*, on material it
+was never drilled on. That is exactly what a DSP exam tests once it stops asking you to
+recite and starts asking you to *apply* a transform to a case you haven't seen. Rote
+memorization of practice questions falls apart at that boundary; failure-shape generalization
+is built for it. The agentic revision didn't shortcut the understanding — it went **above and
+beyond** the usual prep. That's the point of the whole exercise.
 
 ## What's deliberately NOT here
 
